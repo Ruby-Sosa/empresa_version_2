@@ -14,10 +14,10 @@ class Productos extends CI_Controller {
     }
 
     public function index() {
-        // Título de la página
+        
         $data['titulo_pagina'] = 'Productos';
 
-        // Menú temporal o estático
+        
         $data['menu_items'] = array(
             (object) ['titulo' => 'La Anita', 'url' => ''],
             (object) ['titulo' => 'Nosotros', 'url' => 'nosotros'],
@@ -25,12 +25,12 @@ class Productos extends CI_Controller {
             (object) ['titulo' => 'Lanzamientos', 'url' => 'lanzamientos'],
             (object) ['titulo' => 'Recetas / Blogs', 'url' => 'recetas'],
             (object) ['titulo' => 'Contacto', 'url' => 'contacto']
-        ); // ← AQUÍ FALTABA EL CIERRE DEL ARREGLO
+        ); 
 
-        // Obtiene los productos desde el modelo
+        
         $data['productos'] = $this->Productos_model->get_productos();
 
-        // Carga las vistas
+        
         $this->load->view('templates/header_view', $data);
         $this->load->view('la_anita/productos_view', $data);
         $this->load->view('templates/footer_view');

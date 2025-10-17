@@ -11,14 +11,14 @@ class Recetas extends CI_Controller {
 
   public function __construct() {
     parent::__construct();
-    // Carga del modelo con alias
+    
     $this->load->model('Recetas_model', 'recetasModel');
   }
 
   public function index() {
     $data['title'] = 'Recetas y Blogs | La Anita';
 
-    // Menú de navegación
+    
     $data['menu_items'] = array(
       (object) ['titulo' => 'La Anita', 'url' => ''],
       (object) ['titulo' => 'Nosotros', 'url' => 'nosotros'],
@@ -28,10 +28,10 @@ class Recetas extends CI_Controller {
       (object) ['titulo' => 'Contacto', 'url' => 'contacto']
     );
 
-    // Obtiene las recetas del modelo
+    
     $data['recetas'] = $this->recetasModel->get_recetas();
 
-    // Carga de vistas
+    
     $this->load->view('templates/header_view', $data);
     $this->load->view('la_anita/recetas_view', $data);
     $this->load->view('templates/footer_view');

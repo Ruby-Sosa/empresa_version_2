@@ -11,7 +11,7 @@ class Contacto extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        // Cargar modelo y librerías
+        
         $this->load->model('Contacto_model');
         $this->load->library('form_validation');
         $this->load->helper('url');
@@ -20,7 +20,7 @@ class Contacto extends CI_Controller {
     public function index() {
         $data['title'] = 'Contacto | La Anita';
 
-        // Menú temporal o estático
+        
         $data['menu_items'] = array(
             (object) ['titulo' => 'La Anita', 'url' => ''],
             (object) ['titulo' => 'Nosotros', 'url' => 'nosotros'],
@@ -30,18 +30,18 @@ class Contacto extends CI_Controller {
             (object) ['titulo' => 'Contacto', 'url' => 'contacto']
         ); 
 
-        // Reglas de validación
+
         $this->form_validation->set_rules('nombre', 'Nombre', 'required');
         $this->form_validation->set_rules('correo', 'Correo', 'required|valid_email');
         $this->form_validation->set_rules('mensaje', 'Mensaje', 'required');
 
         if ($this->form_validation->run() == FALSE) {
-            // Mostrar formulario si no pasa validación
+
             $this->load->view('templates/header_view', $data);
             $this->load->view('la_anita/contacto_view', $data);
             $this->load->view('templates/footer_view');
         } else {
-            // Guardar mensaje si todo es correcto
+            
             $mensaje = array(
                 'nombre' => $this->input->post('nombre'),
                 'correo' => $this->input->post('correo'),

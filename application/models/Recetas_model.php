@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Recetas_model extends CI_Model {
 
   public function get_recetas() {
-    // Simulación de datos (por si aún no tienes tabla en BD)
+    
     return [
       (object)[
         'titulo' => 'Cochinita Pibil',

@@ -7,10 +7,7 @@ class Menu_model extends CI_Model {
         parent::__construct();
     }
 
-    /**
-     * Obtiene los elementos del menú principal desde dbo.cat_menu
-     * Campos: id, nombre_item, href, orden, estatus
-     */
+    
     public function obtener_items_nav() {
         $this->db->select('nombre_item AS titulo, href AS url');
         $this->db->from('cat_menu');

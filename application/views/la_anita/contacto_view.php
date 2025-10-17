@@ -37,8 +37,8 @@
   </div>
 
   <div class="text-center text-light mt-5">
-    <p><strong>📍 Dirección:</strong> Calle 60 #123, Mérida, Yucatán</p>
-    <p><strong>📞 Teléfono:</strong> (999) 123-4567</p>
-    <p><strong>✉️ Correo:</strong> contacto@laanita.com</p>
+    <p><strong>Dirección:</strong> Calle 60 #123, Mérida, Yucatán</p>
+    <p><strong>Teléfono:</strong> (999) 123-4567</p>
+    <p><strong>Correo:</strong> contacto@laanita.com</p>
   </div>
 </div>
