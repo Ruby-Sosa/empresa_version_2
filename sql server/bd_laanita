@@ -1,0 +1,280 @@
+USE [master]
+GO
+/****** Object:  Database [bd_laanita]    Script Date: 16/10/2025 08:43:28 p. m. ******/
+CREATE DATABASE [bd_laanita]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'bd_laanita', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQL\DATA\bd_laanita.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'bd_laanita_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQL\DATA\bd_laanita_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [bd_laanita] SET COMPATIBILITY_LEVEL = 110
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [bd_laanita].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [bd_laanita] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [bd_laanita] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [bd_laanita] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [bd_laanita] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [bd_laanita] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [bd_laanita] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [bd_laanita] SET AUTO_CREATE_STATISTICS ON 
+GO
+ALTER DATABASE [bd_laanita] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [bd_laanita] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [bd_laanita] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [bd_laanita] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [bd_laanita] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [bd_laanita] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [bd_laanita] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [bd_laanita] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [bd_laanita] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [bd_laanita] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [bd_laanita] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [bd_laanita] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [bd_laanita] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [bd_laanita] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [bd_laanita] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [bd_laanita] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [bd_laanita] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [bd_laanita] SET  MULTI_USER 
+GO
+ALTER DATABASE [bd_laanita] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [bd_laanita] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [bd_laanita] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [bd_laanita] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+USE [bd_laanita]
+GO
+/****** Object:  Table [dbo].[carousel]    Script Date: 16/10/2025 08:43:29 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[carousel](
+	[id_imagen] [int] NOT NULL,
+	[orden] [tinyint] NOT NULL,
+	[href] [varchar](255) NULL,
+	[id] [int] IDENTITY(1,1) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[cat_contenido]    Script Date: 16/10/2025 08:43:29 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[cat_contenido](
+	[id] [int] NOT NULL,
+	[nombre_seccion] [varchar](100) NOT NULL,
+	[slug] [varchar](100) NOT NULL,
+	[estatus] [tinyint] NOT NULL,
+	[contenido] [nvarchar](max) NULL,
+ CONSTRAINT [PK_cat_contenido] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[cat_imagenes]    Script Date: 16/10/2025 08:43:29 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[cat_imagenes](
+	[id] [int] NOT NULL,
+	[ruta] [varchar](255) NULL,
+	[nombre_archivo] [varchar](100) NULL,
+	[estatus] [tinyint] NULL,
+	[registro] [datetime] NULL,
+	[uc] [varchar](50) NULL,
+	[imagen_url] [varchar](255) NULL,
+ CONSTRAINT [PK_cat_imagenes] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[cat_menu]    Script Date: 16/10/2025 08:43:29 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[cat_menu](
+	[id] [int] NOT NULL,
+	[nombre_item] [varchar](50) NOT NULL,
+	[href] [varchar](255) NOT NULL,
+	[orden] [tinyint] NOT NULL,
+	[es_archivo] [tinyint] NOT NULL,
+	[slug] [varchar](100) NULL,
+	[estatus] [bit] NULL,
+ CONSTRAINT [PK_cat_menu] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[mensajes_contacto]    Script Date: 16/10/2025 08:43:29 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[mensajes_contacto](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nombre] [nvarchar](100) NOT NULL,
+	[correo] [nvarchar](150) NOT NULL,
+	[asunto] [nvarchar](150) NULL,
+	[mensaje] [nvarchar](max) NOT NULL,
+	[fecha] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[productos]    Script Date: 16/10/2025 08:43:29 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[productos](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[nombre] [nvarchar](100) NOT NULL,
+	[descripcion] [nvarchar](255) NULL,
+	[precio] [decimal](10, 2) NULL,
+	[imagen_url] [nvarchar](255) NULL,
+	[categoria] [nvarchar](100) NULL,
+	[es_lanzamiento] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[recetas]    Script Date: 16/10/2025 08:43:29 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[recetas](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[titulo] [nvarchar](150) NOT NULL,
+	[descripcion] [nvarchar](500) NULL,
+	[imagen_url] [nvarchar](255) NULL,
+	[autor] [nvarchar](100) NULL,
+	[fecha] [datetime] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET IDENTITY_INSERT [dbo].[carousel] ON 
+
+INSERT [dbo].[carousel] ([id_imagen], [orden], [href], [id]) VALUES (1, 1, N'https://www.laanita.com/productos/habanera', 1)
+INSERT [dbo].[carousel] ([id_imagen], [orden], [href], [id]) VALUES (2, 2, N'https://www.laanita.com/productos/condimentos', 2)
+INSERT [dbo].[carousel] ([id_imagen], [orden], [href], [id]) VALUES (3, 3, N'https://www.laanita.com/productos/salsas', 3)
+SET IDENTITY_INSERT [dbo].[carousel] OFF
+INSERT [dbo].[cat_contenido] ([id], [nombre_seccion], [slug], [estatus], [contenido]) VALUES (1, N'Nuestra Inspiración', N'inspiracion', 1, N'<p>En La Anita trabajamos con pasión para ofrecer los mejores sabores de Yucatán al mundo.</p>')
+INSERT [dbo].[cat_contenido] ([id], [nombre_seccion], [slug], [estatus], [contenido]) VALUES (2, N'Nuestra Historia', N'historia', 1, NULL)
+INSERT [dbo].[cat_contenido] ([id], [nombre_seccion], [slug], [estatus], [contenido]) VALUES (3, N'Misión', N'mision', 1, NULL)
+INSERT [dbo].[cat_contenido] ([id], [nombre_seccion], [slug], [estatus], [contenido]) VALUES (4, N'Visión', N'vision', 1, NULL)
+INSERT [dbo].[cat_contenido] ([id], [nombre_seccion], [slug], [estatus], [contenido]) VALUES (5, N'Valores', N'valores', 1, NULL)
+INSERT [dbo].[cat_imagenes] ([id], [ruta], [nombre_archivo], [estatus], [registro], [uc], [imagen_url]) VALUES (1, N'assets/img/carrusel/banner_habanero.jpg', N'habanera.jpg', 1, CAST(N'2025-10-15 23:03:39.303' AS DateTime), N'admin', N'assets/img/carrusel/banner_habanero.jpg')
+INSERT [dbo].[cat_imagenes] ([id], [ruta], [nombre_archivo], [estatus], [registro], [uc], [imagen_url]) VALUES (2, N'assets/img/carrusel/banner_achiote.jpg.webp', N'condimentos.jpg', 1, CAST(N'2025-10-15 23:03:39.303' AS DateTime), N'admin', N'assets/img/carrusel/banner_achiote.jpg.webp')
+INSERT [dbo].[cat_imagenes] ([id], [ruta], [nombre_archivo], [estatus], [registro], [uc], [imagen_url]) VALUES (3, N'assets/img/carrusel/salsas.png', N'salsas.jpg', 1, CAST(N'2025-10-15 23:03:39.303' AS DateTime), N'admin', N'assets/img/carrusel/salsas.png')
+INSERT [dbo].[cat_menu] ([id], [nombre_item], [href], [orden], [es_archivo], [slug], [estatus]) VALUES (1, N'La Anita', N'inicio', 1, 0, N'la-anita', 1)
+INSERT [dbo].[cat_menu] ([id], [nombre_item], [href], [orden], [es_archivo], [slug], [estatus]) VALUES (2, N'Nosotros', N'nosotros', 2, 0, N'nosotros', 1)
+INSERT [dbo].[cat_menu] ([id], [nombre_item], [href], [orden], [es_archivo], [slug], [estatus]) VALUES (3, N'Productos', N'tienda', 3, 0, N'productos', 1)
+INSERT [dbo].[cat_menu] ([id], [nombre_item], [href], [orden], [es_archivo], [slug], [estatus]) VALUES (4, N'Lanzamientos', N'lanzamientos', 4, 0, N'lanzamientos', 1)
+INSERT [dbo].[cat_menu] ([id], [nombre_item], [href], [orden], [es_archivo], [slug], [estatus]) VALUES (5, N'Recetas / Blogs', N'recetas', 5, 0, NULL, 1)
+INSERT [dbo].[cat_menu] ([id], [nombre_item], [href], [orden], [es_archivo], [slug], [estatus]) VALUES (6, N'Contacto', N'contacto', 6, 0, N'contacto', 1)
+SET IDENTITY_INSERT [dbo].[mensajes_contacto] ON 
+
+INSERT [dbo].[mensajes_contacto] ([id], [nombre], [correo], [asunto], [mensaje], [fecha]) VALUES (1, N'jhjhhj', N'ros.pechpaola@gmail.com', N'kjkjkj', N'kjkjk', CAST(N'2025-10-16 12:10:21.590' AS DateTime))
+SET IDENTITY_INSERT [dbo].[mensajes_contacto] OFF
+SET IDENTITY_INSERT [dbo].[productos] ON 
+
+INSERT [dbo].[productos] ([id], [nombre], [descripcion], [precio], [imagen_url], [categoria], [es_lanzamiento]) VALUES (1, N'Achiote Líquido', N'El sabor auténtico yucateco en cada gota. Ideal para cochinita pibil y carnes.', CAST(42.00 AS Decimal(10, 2)), N'assets/img/productos/achiote_liquido.jpg', N'Achiotes', 1)
+INSERT [dbo].[productos] ([id], [nombre], [descripcion], [precio], [imagen_url], [categoria], [es_lanzamiento]) VALUES (2, N'Salsa Habanera Roja', N'Salsa tradicional con chile habanero rojo. Picante e intensa.', CAST(38.00 AS Decimal(10, 2)), N'assets/img/productos/salsa_habanera_roja.jpg', N'Salsas Habaneras', 0)
+INSERT [dbo].[productos] ([id], [nombre], [descripcion], [precio], [imagen_url], [categoria], [es_lanzamiento]) VALUES (3, N'Salsa Habanera Verde', N'Explosión de sabor fresco con chile habanero verde.', CAST(38.00 AS Decimal(10, 2)), N'assets/img/productos/salsa_habanera_verde.jpg', N'Salsas Habaneras', 1)
+INSERT [dbo].[productos] ([id], [nombre], [descripcion], [precio], [imagen_url], [categoria], [es_lanzamiento]) VALUES (4, N'Marinador Pastor', N'Perfecto para darle el toque rojo y sabroso al cerdo o pollo al pastor.', CAST(45.50 AS Decimal(10, 2)), N'assets/img/productos/marinador_pastor.jpg', N'Marinadores y Sazonadores', 0)
+INSERT [dbo].[productos] ([id], [nombre], [descripcion], [precio], [imagen_url], [categoria], [es_lanzamiento]) VALUES (5, N'Condimento Natural de Pollo', N'Realza el sabor de tus platillos con ingredientes naturales.', CAST(33.00 AS Decimal(10, 2)), N'assets/img/productos/condimento_pollo.jpg', N'Condimentos', 1)
+INSERT [dbo].[productos] ([id], [nombre], [descripcion], [precio], [imagen_url], [categoria], [es_lanzamiento]) VALUES (6, N'Salsa para Botana', N'Ideal para acompañar papas fritas, snacks y antojitos.', CAST(30.00 AS Decimal(10, 2)), N'assets/img/productos/salsa_botana.jpg', N'Salsas para Botanas', 0)
+INSERT [dbo].[productos] ([id], [nombre], [descripcion], [precio], [imagen_url], [categoria], [es_lanzamiento]) VALUES (7, N'Vinagre Blanco', N'Vinagre clásico con sabor puro y natural para tus aderezos y marinados.', CAST(20.00 AS Decimal(10, 2)), N'assets/img/productos/achiote_pasta.png', N'Vinagres', 0)
+INSERT [dbo].[productos] ([id], [nombre], [descripcion], [precio], [imagen_url], [categoria], [es_lanzamiento]) VALUES (8, N'Achiote en Pasta', N'Tradicional achiote en pasta para preparar cochinita, pollo o pescado.', CAST(35.00 AS Decimal(10, 2)), N'assets/img/productos/vinagre_blanco.jpg', N'Achiotes', 0)
+INSERT [dbo].[productos] ([id], [nombre], [descripcion], [precio], [imagen_url], [categoria], [es_lanzamiento]) VALUES (9, N'Salsa de Chipotle', N'Salsa con toque ahumado y picante para carnes y tacos.', CAST(37.00 AS Decimal(10, 2)), N'assets/img/productos/salsa_chipotle.jpg', N'Salsas para Botanas', 0)
+SET IDENTITY_INSERT [dbo].[productos] OFF
+SET IDENTITY_INSERT [dbo].[recetas] ON 
+
+INSERT [dbo].[recetas] ([id], [titulo], [descripcion], [imagen_url], [autor], [fecha]) VALUES (1, N'Tacos de Cochinita Pibil', N'Deliciosos tacos tradicionales yucatecos con achiote La Anita y cebolla morada.', N'cochinita.jpg', N'Chef Ana López', CAST(N'2025-10-16 15:55:30.057' AS DateTime))
+INSERT [dbo].[recetas] ([id], [titulo], [descripcion], [imagen_url], [autor], [fecha]) VALUES (2, N'Salsa Habanera Verde Casera', N'Aprende a preparar una salsa picante fresca y natural con habanero verde La Anita.', N'habanera_verde.jpg', N'Cocina Yucateca', CAST(N'2025-10-16 15:55:30.057' AS DateTime))
+INSERT [dbo].[recetas] ([id], [titulo], [descripcion], [imagen_url], [autor], [fecha]) VALUES (3, N'Pollo en Achiote', N'Una receta sencilla y llena de sabor con el inconfundible achiote de La Anita.', N'pollo_achiote.jpg', N'Chef Luis Pérez', CAST(N'2025-10-16 15:55:30.057' AS DateTime))
+SET IDENTITY_INSERT [dbo].[recetas] OFF
+ALTER TABLE [dbo].[cat_menu] ADD  DEFAULT ((1)) FOR [estatus]
+GO
+ALTER TABLE [dbo].[mensajes_contacto] ADD  DEFAULT (getdate()) FOR [fecha]
+GO
+ALTER TABLE [dbo].[productos] ADD  DEFAULT ((0)) FOR [es_lanzamiento]
+GO
+ALTER TABLE [dbo].[recetas] ADD  DEFAULT (getdate()) FOR [fecha]
+GO
+USE [master]
+GO
+ALTER DATABASE [bd_laanita] SET  READ_WRITE 
+GO
