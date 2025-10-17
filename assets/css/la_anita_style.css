@@ -1,0 +1,218 @@
+/* ======================================
+   PALETA Y FUENTES BASE
+====================================== */
+:root {
+  --azul-anita: #009FE3;
+  --azul-profundo: #0077B6;
+  --amarillo-anita: #FFD60A;
+  --naranja-anita: #F57C00;
+  --rosa-mexicano: #EC407A;
+  --verde-lima: #66BB6A;
+  --rojo-anita: #C62828;
+  --blanco-suave: #FFFDF5;
+  --sombra: 0 6px 18px rgba(0, 0, 0, 0.25);
+  --fuente-titulo: 'Merienda', cursive;
+  --fuente-texto: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, var(--azul-anita) 0%, #00BFFF 100%);
+  font-family: var(--fuente-texto);
+  color: var(--amarillo-anita);
+  margin: 0;
+  padding: 0;
+}
+
+/* ======================================
+   NAVBAR
+====================================== */
+.navbar {
+  background-color: var(--azul-profundo) !important;
+  box-shadow: var(--sombra);
+}
+
+.navbar-brand {
+  color: var(--amarillo-anita) !important;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--amarillo-anita) !important;
+}
+
+/* ======================================
+   SECCIÓN INICIO
+====================================== */
+.inicio-anita {
+  background: linear-gradient(180deg, var(--azul-anita) 0%, #00BFFF 100%);
+  min-height: 100vh;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.inicio-anita h2,
+.inicio-anita p {
+  color: var(--amarillo-anita);
+  font-family: var(--fuente-titulo);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-inner img {
+  height: 480px;
+  object-fit: cover;
+  border-radius: 0 0 25px 25px;
+  box-shadow: var(--sombra);
+}
+
+/* ======================================
+   TARJETAS (PRODUCTOS / LANZAMIENTOS)
+====================================== */
+.card {
+  border: none;
+  border-radius: 15px;
+  background-color: var(--blanco-suave);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(255, 165, 0, 0.3);
+}
+
+.card-title {
+  color: var(--rojo-anita);
+  font-family: var(--fuente-texto);
+  font-weight: bold;
+}
+
+.card-text {
+  color: #444;
+}
+
+/* ======================================
+   BOTONES
+====================================== */
+.btn-warning {
+  background-color: var(--naranja-anita) !important;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-warning:hover {
+  background-color: #EF6C00 !important;
+  transform: scale(1.05);
+}
+
+/* ======================================
+   SECCIONES DESTACADAS
+====================================== */
+.bg-orange {
+  background-color: var(--naranja-anita) !important;
+  color: #fff;
+}
+
+.text-yellow {
+  color: var(--amarillo-anita) !important;
+}
+
+.text-orange {
+  color: var(--naranja-anita) !important;
+}
+
+.text-rosa {
+  color: var(--rosa-mexicano) !important;
+}
+
+/* ======================================
+   PÁGINA NOSOTROS
+====================================== */
+.nosotros-page h1, 
+.nosotros-page h2 {
+  font-family: var(--fuente-titulo);
+  letter-spacing: 1px;
+}
+
+.nosotros-page p {
+  font-family: var(--fuente-texto);
+  font-size: 1.05rem;
+}
+
+.nosotros-page img {
+  transition: transform 0.4s ease;
+}
+
+.nosotros-page img:hover {
+  transform: scale(1.05);
+}
+
+/* ======================================
+   CONTACTO
+====================================== */
+.contacto-card {
+  background-color: var(--blanco-suave);
+  border: none;
+  border-radius: 15px;
+  box-shadow: var(--sombra);
+}
+
+.contacto-card label {
+  color: var(--rojo-anita);
+  font-weight: 600;
+}
+
+/* ======================================
+   FOOTER
+====================================== */
+.footer-anita {
+  background: linear-gradient(180deg, #004aad 0%, #002b6e 100%);
+  font-family: var(--fuente-texto);
+  padding: 20px 0;
+  color: white;
+  text-align: center;
+}
+
+.footer-anita .text-yellow {
+  color: var(--amarillo-anita) !important;
+}
+
+.footer-anita a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-anita a:hover {
+  color: var(--amarillo-anita);
+  text-decoration: underline;
+}
+
+.footer-anita .social-link {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.footer-anita .social-link:hover {
+  transform: scale(1.2);
+  color: var(--amarillo-anita);
+}
+
+/* Recetas */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 25px rgba(255, 153, 0, 0.3);
+}
+
+
+
+
