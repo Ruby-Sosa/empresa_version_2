@@ -9,7 +9,7 @@
        data-bs-ride="carousel" data-bs-interval="5000">
     <div class="carousel-inner">
 
-      <!-- SLIDE 1 - PRODUCTOS -->
+      
       <div class="carousel-item active">
         <img src="<?php echo base_url('assets/img/carrusel/productos.png'); ?>" 
              class="d-block w-100" alt="Productos La Anita"
