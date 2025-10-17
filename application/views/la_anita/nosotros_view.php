@@ -1,6 +1,5 @@
 <main class="nosotros-page">
 
-  <!-- Sección principal -->
   <section class="text-white text-center py-5" style="background-color: #A3C200;">
     <div class="container">
       <h1 class="fw-bold text-uppercase mb-3">NOSOTROS</h1>
@@ -16,7 +15,6 @@
     </div>
   </section>
 
-  <!-- Misión y Visión -->
   <section class="text-white py-5" style="background-color: #E9307E; position: relative; overflow: hidden;">
     <div class="container position-relative">
       <div class="row justify-content-center text-center">
@@ -47,7 +45,6 @@
     </div>
   </section>
 
-  <!-- Historia -->
   <section class="py-5" style="background-color: #fff;">
     <div class="container">
       <div class="row align-items-center">

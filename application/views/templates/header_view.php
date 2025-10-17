@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo isset($titulo_pagina) ? $titulo_pagina : 'La Anita'; ?></title>
 
-  <!-- Bootstrap -->
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-  <!-- Fuentes -->
+  
   <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <!-- Estilos personalizados -->
+  
   <link rel="stylesheet" href="<?php echo base_url('assets/css/la_anita_style.css'); ?>">
 </head>
 

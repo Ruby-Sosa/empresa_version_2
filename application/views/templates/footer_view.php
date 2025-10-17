@@ -4,7 +4,7 @@
   <div class="container py-5">
     <div class="row align-items-center text-center text-md-start">
 
-      <!-- Columna 1: Logo -->
+      
       <div class="col-md-4 mb-4 mb-md-0">
         <img src="<?php echo base_url('assets/img/Anita_logo.jpg'); ?>" alt="La Anita" class="img-fluid mb-3" style="max-width: 140px;">
         <p class="small mb-0">
@@ -12,7 +12,7 @@
         </p>
       </div>
 
-      <!-- Columna 2: Enlaces -->
+      
       <div class="col-md-4 mb-4 mb-md-0">
         <h6 class="fw-bold text-yellow mb-3">Enlaces rápidos</h6>
         <ul class="list-unstyled small">
@@ -23,7 +23,7 @@
         </ul>
       </div>
 
-      <!-- Columna 3: Redes sociales -->
+      
       <div class="col-md-4 text-md-end">
         <h6 class="fw-bold text-yellow mb-3">Síguenos</h6>
         <div class="d-flex justify-content-center justify-content-md-end gap-3">
@@ -34,10 +34,10 @@
       </div>
     </div>
 
-    <!-- Línea divisoria -->
+    
     <hr class="border-light opacity-25 my-4">
 
-    <!-- Copyright -->
+   
     <div class="text-center">
       <p class="mb-1 small">© 2025 <strong>La Anita</strong> — Todos los derechos reservados.</p>
       <p class="small text-yellow mb-0">Hecho con <span style="color: #FFD60A;">♥</span> en Yucatán, México.</p>

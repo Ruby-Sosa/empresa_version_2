@@ -19,7 +19,7 @@
             <section class="content">
                 <div id="contenido-dinamico">
                     <?php 
-                    // Carga la vista específica: inicio.php o seccion_dinamica.php
+                    
                     echo $contenido_principal; 
                     ?>
                 </div>

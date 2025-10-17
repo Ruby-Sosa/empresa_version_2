@@ -2,12 +2,12 @@
   <div class="container text-center">
     <div class="row align-items-center">
 
-      <!-- Logo -->
+      
       <div class="col-md-3 mb-3">
         <img src="<?php echo base_url('assets/img/la_anita.webp'); ?>" alt="La Anita" class="img-fluid" style="max-width:120px;">
       </div>
 
-      <!-- Enlaces -->
+  
       <div class="col-md-3 mb-3">
         <ul class="list-unstyled">
           <li><a href="#" class="text-white text-decoration-none">LA ANITA</a></li>

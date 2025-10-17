@@ -12,7 +12,7 @@
   </form>
 </div>
 
-<!-- Container (About Section) -->
+
 <div id="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
@@ -41,7 +41,7 @@
   </div>
 </div>
 
-<!-- Container (Services Section) -->
+
 <div id="services" class="container-fluid text-center">
   <h2>SERVICES</h2>
   <h4>What we offer</h4>
@@ -83,7 +83,7 @@
   </div>
 </div>
 
-<!-- Container (Portfolio Section) -->
+
 <div id="portfolio" class="container-fluid text-center bg-grey">
   <h2>Portfolio</h2><br>
   <h4>What we have created</h4>
@@ -113,14 +113,14 @@
   
   <h2>What our customers say</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-    <!-- Indicators -->
+   
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
-    <!-- Wrapper for slides -->
+    
     <div class="carousel-inner" role="listbox">
       <div class="item active">
         <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
@@ -133,7 +133,7 @@
       </div>
     </div>
 
-    <!-- Left and right controls -->
+    
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -145,7 +145,7 @@
   </div>
 </div>
 
-<!-- Container (Pricing Section) -->
+
 <div id="pricing" class="container-fluid">
   <div class="text-center">
     <h2>Pricing</h2>
@@ -212,7 +212,7 @@
   </div>
 </div>
 
-<!-- Container (Contact Section) -->
+
 <div id="contact" class="container-fluid bg-grey">
   <h2 class="text-center">CONTACT</h2>
   <div class="row">
@@ -241,5 +241,5 @@
   </div>
 </div>
 
-<!-- Image of location/map -->
+
 <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">

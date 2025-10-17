@@ -1,7 +1,6 @@
 <div class="container my-5">
   <h2 class="text-center fw-bold mb-4 text-warning">Nuestros Productos</h2>
   
-  <!-- Contenedor de tarjetas -->
   <div class="row justify-content-center">
     <?php foreach ($productos as $producto): ?>
     <div class="col-md-3 mb-4">
